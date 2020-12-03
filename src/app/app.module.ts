@@ -1,18 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ContactsComponent } from './contacts/contacts.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { AddContactsComponent } from './components/add-contacts/add-contacts.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContactsComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, ContactsComponent, AddContactsComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
