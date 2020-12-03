@@ -1,0 +1,26 @@
+<ul class="contacts">
+  <li
+    *ngFor="let contact of contacts"
+    [class.selected]="contact === selectedContact"
+    (click)="onSelect(contact)"
+  >
+    <span class="badge" (click)="onSelect(contact)">{{ contact.id }}</span>
+    {{ contact.firstName }}
+    {{ contact.lastName }}
+  </li>
+</ul>
+
+<div *ngIf="selectedContact" class="details_container">
+  <h2>
+    {{ selectedContact.firstName }}
+    {{ selectedContact.lastName }}'s info:
+  </h2>
+  <div class="sub-info-container">
+    <h2 class="sub-info">
+      Email Address: <i class="sub-text">{{ selectedContact.email }}</i>
+    </h2>
+    <h2 class="sub-info">
+      Mobile Number: <i class="sub-text">{{ selectedContact.mobile }}</i>
+    </h2>
+  </div>
+</div>
